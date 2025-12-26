@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mahek | Portfolio & Blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ===== GOOGLE FONTS ===== -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #f4f6f8;
+    --text: #1f2a34;
+    --card: #ffffff;
+    --accent: #4f7cff;
+}
+
+/* DARK THEME */
+body.dark {
+    --bg: #0d1117;
+    --text: #c9d1d9;
+    --card: #161b22;
+    --accent: #58a6ff;
+}
+
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.3s ease;
+}
+
+/* ===== HEADER ===== */
+header {
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+.navbar ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+}
+
+/* THEME TOGGLE */
+#themeToggle {
+    cursor: pointer;
+    font-size: 20px;
+    padding: 6px 12px;
+    border-radius: 50%;
+    background: var(--card);
+    border: none;
+}
+
+/* ===== HERO ===== */
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #3c4f86, #32445f);
+    color: #fff;
+    text-align: left;
+}
+
+.hero img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid #8aa3de;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.hero-content h1 {
+    margin: 0 0 10px 0;
+    font-size: 36px;
+}
+
+.hero-content p {
+    margin: 5px 0 15px 0;
+    font-size: 18px;
+}
+
+.social-icons a {
+    margin-right: 12px;
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: var(--accent);
+}
+
+/* ===== BUTTON ===== */
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 26px;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 15px;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section h2 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* ===== SKILLS ===== */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.skill-card {
+    background: var(--card);
+    color: var(--text);
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    font-weight: 500;
+}
+
+/* ===== PROJECTS ===== */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.project-card {
+    width: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.3s;
+    background: var(--card);
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    margin: 15px;
+    font-size: 20px;
+}
+
+.project-card p {
+    margin: 0 15px 15px 15px;
+}
+
+/* ===== BLOG ===== */
+.blog-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.blog-card {
+    width: 300px;
+    background: var(--card);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.blog-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.blog-card h3 {
+    margin-top: 0;
+}
+
+.blog-card p {
+    font-size: 14px;
+}
+
+/* ===== CONTACT ===== */
+.contact-card {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: var(--card);
+    color: var(--text);
+    padding: 24px;
+    text-align: center;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Mahek</div>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <button id="themeToggle">🌙</button>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+    <img src="assets/Mahek.jpg" alt="Mahek Photo">
+    <div class="hero-content">
+        <h1>Mahek</h1>
+        <p>Student | Aspiring Professional | Creative Learner</p>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/munazzah-mahek/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/shonu-mahek" target="_blank">GitHub</a>
+        </div>
+        <a href="assets/Mahek_Resume.pdf" target="_blank" class="btn">Download Resume</a>
+    </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="section" id="about">
+    <h2>About Me</h2>
+    <div class="contact-card">
+        I am Mahek, a passionate learner interested in technology, photography, travel, and creative storytelling.
+    </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section class="section" id="skills">
+    <h2>Skills</h2>
+    <div class="skills-container">
+        <div class="skill-card">Python</div>
+        <div class="skill-card">Machine Learning</div>
+        <div class="skill-card">Deep Learning</div>
+        <div class="skill-card">Computer Vision</div>
+        <div class="skill-card">HTML & CSS</div>
+        <div class="skill-card">Data Analytics</div>
+        <div class="skill-card">Power BI</div>
+    </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section class="section" id="projects">
+    <h2>Projects</h2>
+    <div class="projects-container">
+        <div class="project-card">
+            <img src="assets/project-cancer.jpeg" alt="Cancer Project">
+            <h3>Cancer Segmentation & Classification</h3>
+            <p>Medical image analysis using deep learning</p>
+        </div>
+        <div class="project-card">
+            <img src="assets/project-virtual.jpeg" alt="Virtual Mouse">
+            <h3>Virtual Mouse using Hand Gesture</h3>
+            <p>Gesture-based interaction system</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== BLOG ===== -->
+<section class="section" id="blog">
+    <h2>Blog</h2>
+    <div class="blog-container">
+        <div class="blog-card">
+            <img src="assets/kerala.jpeg" alt="Kerala Travel">
+            <h3>Travel</h3>
+            <p>Kerala Diaries – Exploring serene backwaters and lush landscapes.</p>
+            <a href="blog-kerala.html" class="btn">Read More</a>
+        </div>
+        <div class="blog-card">
+            <img src="assets/photography.jpeg" alt="Photography Tips">
+            <h3>Photography</h3>
+            <p>Learn how to capture stunning portraits and landscapes.</p>
+            <a href="blog-photography.html" class="btn">Read More</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="section" id="contact">
+    <h2>Contact</h2>
+    <div class="contact-card">
+        Email: munazzahmahek13@gmail.com<br>
+        Contact: +91 9777771676
+    </div>
+</section>
+
+<footer>
+    © 2025 Mahek | All Rights Reserved
+</footer>
+
+<script>
+// THEME TOGGLE
+const themeToggle = document.getElementById("themeToggle");
+themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    themeToggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+});
+</script>
+
+</body>
+</html>

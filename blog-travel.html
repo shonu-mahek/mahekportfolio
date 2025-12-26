@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Travel Blog | Mahek</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="blog.html">
+</head>
+
+<body>
+<header>
+  <h2>Mahek</h2>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="blog.html">Blog</a>
+  </nav>
+  <div class="toggle" onclick="toggleTheme()">🌙</div>
+</header>
+
+<div class="container">
+  <h1>Travel Blogs</h1>
+
+  <div class="grid">
+    <a href="kerala.html" class="card">
+      <img src="images/kerala1.jpg" style="width:100%;border-radius:10px;">
+      <h2>Kerala Diaries</h2>
+      <p>Backwaters, greenery & peace</p>
+    </a>
+  </div>
+</div>
+
+<script>
+function toggleTheme(){
+  document.body.classList.toggle("light");
+}
+</script>
+</body>
+</html>
